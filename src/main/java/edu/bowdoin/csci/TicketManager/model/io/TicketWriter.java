@@ -28,7 +28,7 @@ public class TicketWriter {
 
         FileWriter myWriter;
 
-        if (ticketList.size() == 0) {
+        if (ticketList.isEmpty()) {
             throw new IllegalArgumentException("Unable to save file.");
         }
 

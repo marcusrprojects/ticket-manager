@@ -1,7 +1,7 @@
 package main.java.edu.bowdoin.csci.TicketManager.model.command;
 
 /**
- * Creates objects that encapsulates user actions or transitions and updates {@link edu.bowdoin.csci.TicketManager.model.ticket.Ticket} states
+ * Creates objects that encapsulates user actions or transitions and updates {@link main.java.edu.bowdoin.csci.TicketManager.model.ticket.Ticket} states
  *
  * @author Darien
  */
@@ -103,7 +103,7 @@ public class Command {
     public Command(CommandValue c, String ownerId, FeedbackCode feedbackCode, ResolutionCode resolutionCode, CancellationCode cancellationCode, String note) {
         if (c == null) {
             throw new IllegalArgumentException("CommandValue cannot be null.");
-        } else if (c == CommandValue.PROCESS && (ownerId == null || "".equals(ownerId))) {
+        } else if (c == CommandValue.PROCESS && (ownerId == null || ownerId.isEmpty())) {
             throw new IllegalArgumentException("Owner ID must be non-null and non-empty for CommandValue PROCESS.");
         } else if (c == CommandValue.FEEDBACK && feedbackCode == null) {
             throw new IllegalArgumentException("FeedbackCode cannot be null for CommandValue FEEDBACK.");
@@ -111,7 +111,7 @@ public class Command {
             throw new IllegalArgumentException("ResolutionCode cannot be null for CommandValue RESOLVE.");
         } else if (c == CommandValue.CANCEL && cancellationCode == null) {
             throw new IllegalArgumentException("CancellationCode cannot be null for CommandValue CANCEL.");
-        } else if (note == null || "".equals(note)) {
+        } else if (note == null || note.isEmpty()) {
             throw new IllegalArgumentException("Note must not be empty or null.");
         }
 

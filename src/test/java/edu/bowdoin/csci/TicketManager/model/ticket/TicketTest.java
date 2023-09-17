@@ -284,15 +284,11 @@ public class TicketTest {
     public void testInvalidFlow() {
         Ticket ticket1 = new Ticket(4, "Canceled", "Incident", "Subject", "Caller", "Hardware", "Low", "Owner", "Inappropriate", new ArrayList<>());
 
-        Assertions.assertThrows(UnsupportedOperationException.class, () -> {
-            ticket1.update(new Command(Command.CommandValue.PROCESS, "Darien", null, null, null, "Bad command."));
-        });
+        Assertions.assertThrows(UnsupportedOperationException.class, () -> ticket1.update(new Command(Command.CommandValue.PROCESS, "Darien", null, null, null, "Bad command.")));
 
         Ticket ticket2 = new Ticket(6, "Closed", "Incident", "Subject", "Caller", "Hardware", "Low", "Owner", "Caller Closed", new ArrayList<>());
 
-        Assertions.assertThrows(UnsupportedOperationException.class, () -> {
-            ticket2.update(new Command(Command.CommandValue.PROCESS, "Darien", null, null, null, "Bad command."));
-        });
+        Assertions.assertThrows(UnsupportedOperationException.class, () -> ticket2.update(new Command(Command.CommandValue.PROCESS, "Darien", null, null, null, "Bad command.")));
     }
 
     /**
@@ -331,7 +327,7 @@ public class TicketTest {
 
     /**
      * Tests FSM flow from Feedback state to Canceled state
-     * {@link edu.bowdoin.csci.TicketManager.model.ticket.Ticket.CanceledState}
+     * {@link main.java.edu.bowdoin.csci.TicketManager.model.ticket.Ticket.CanceledState}
      */
     @Test
     public void testFeedbacktoCanceled() {

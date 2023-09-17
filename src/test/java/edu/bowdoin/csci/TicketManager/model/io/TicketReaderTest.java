@@ -181,80 +181,42 @@ public class TicketReaderTest {
     @Test
     public void testReadErrorTickets() {
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            TicketReader.readTicketFile("does-not-exist.txt");
-        }, "Missing file - is NOT in the test directory b/c it's missing");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> TicketReader.readTicketFile("does-not-exist.txt"), "Missing file - is NOT in the test directory b/c it's missing");
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            TicketReader.readTicketFile(filename3);
-        }, "File 3 cannot be loaded since it has no notes");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> TicketReader.readTicketFile(filename3), "File 3 cannot be loaded since it has no notes");
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            TicketReader.readTicketFile(filename4);
-        }, "File 4 cannot be loaded since it has no id");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> TicketReader.readTicketFile(filename4), "File 4 cannot be loaded since it has no id");
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            TicketReader.readTicketFile(filename5);
-        }, "File 5 cannot be loaded since it has no state");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> TicketReader.readTicketFile(filename5), "File 5 cannot be loaded since it has no state");
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            TicketReader.readTicketFile(filename6);
-        }, "File 6 cannot be loaded since it has a non-supported state");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> TicketReader.readTicketFile(filename6), "File 6 cannot be loaded since it has a non-supported state");
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            TicketReader.readTicketFile(filename7);
-        }, "File 7 cannot be loaded since it has no ticket type");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> TicketReader.readTicketFile(filename7), "File 7 cannot be loaded since it has no ticket type");
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            TicketReader.readTicketFile(filename8);
-        }, "File 8 cannot be loaded since it has a non-supported ticket type");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> TicketReader.readTicketFile(filename8), "File 8 cannot be loaded since it has a non-supported ticket type");
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            TicketReader.readTicketFile(filename9);
-        }, "File 9 cannot be loaded since it has an empty subject");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> TicketReader.readTicketFile(filename9), "File 9 cannot be loaded since it has an empty subject");
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            TicketReader.readTicketFile(filename10);
-        }, "File 10 cannot be loaded since it has no caller");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> TicketReader.readTicketFile(filename10), "File 10 cannot be loaded since it has no caller");
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            TicketReader.readTicketFile(filename11);
-        }, "File 11 cannot be loaded since it has no category");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> TicketReader.readTicketFile(filename11), "File 11 cannot be loaded since it has no category");
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            TicketReader.readTicketFile(filename12);
-        }, "File 12 cannot be loaded since it has a non-existant category");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> TicketReader.readTicketFile(filename12), "File 12 cannot be loaded since it has a non-existant category");
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            TicketReader.readTicketFile(filename13);
-        }, "File 13 cannot be loaded since it has no priority");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> TicketReader.readTicketFile(filename13), "File 13 cannot be loaded since it has no priority");
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            TicketReader.readTicketFile(filename14);
-        }, "File 14 cannot be loaded since it has a non-existant priority");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> TicketReader.readTicketFile(filename14), "File 14 cannot be loaded since it has a non-existant priority");
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            TicketReader.readTicketFile(filename15);
-        }, "File 15 cannot be loaded since it has no owner");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> TicketReader.readTicketFile(filename15), "File 15 cannot be loaded since it has no owner");
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            TicketReader.readTicketFile(filename16);
-        }, "File 16 should be in the feedback state since it is awaiting a caller.");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> TicketReader.readTicketFile(filename16), "File 16 should be in the feedback state since it is awaiting a caller.");
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            TicketReader.readTicketFile(filename17);
-        }, "File 17 cannot be solved while also in the working state");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> TicketReader.readTicketFile(filename17), "File 17 cannot be solved while also in the working state");
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            TicketReader.readTicketFile(filename18);
-        }, "File 18 should be canceled if it is a duplicate");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> TicketReader.readTicketFile(filename18), "File 18 should be canceled if it is a duplicate");
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            TicketReader.readTicketFile(filename19);
-        }, "File 19 cannot be resolved if it is not completed");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> TicketReader.readTicketFile(filename19), "File 19 cannot be resolved if it is not completed");
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            TicketReader.readTicketFile(filename20);
-        }, "File 20 should only appear for incidents, not requests");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> TicketReader.readTicketFile(filename20), "File 20 should only appear for incidents, not requests");
     }
 }

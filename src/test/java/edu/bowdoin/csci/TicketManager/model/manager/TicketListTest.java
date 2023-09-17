@@ -115,9 +115,7 @@ public class TicketListTest {
 
         Assertions.assertEquals(1, ticketList.getTicketsByType(TicketType.REQUEST).size(), "TicketList.getTicketsByType() should equal a list with the ticket with an ID of 2. We test to see if the list has just a length of 1.");
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            ticketList.getTicketsByType(null);
-        }, "TicketList.getTicketsByType() should not take in null.");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> ticketList.getTicketsByType(null), "TicketList.getTicketsByType() should not take in null.");
     }
 
 

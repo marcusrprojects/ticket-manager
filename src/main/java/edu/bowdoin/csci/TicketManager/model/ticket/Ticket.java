@@ -319,14 +319,11 @@ public class Ticket {
     public String getCancellationCode() {
         if (this.cancellationCode == null) return null;
 
-        switch (this.cancellationCode) {
-            case DUPLICATE:
-                return Command.CC_DUPLICATE;
-            case INAPPROPRIATE:
-                return Command.CC_INAPPROPRIATE;
-            default:
-                throw new IllegalArgumentException("Invalid cancellation code.");
-        }
+        return switch (this.cancellationCode) {
+            case DUPLICATE -> Command.CC_DUPLICATE;
+            case INAPPROPRIATE -> Command.CC_INAPPROPRIATE;
+            default -> throw new IllegalArgumentException("Invalid cancellation code.");
+        };
     }
 
     /**
@@ -334,20 +331,14 @@ public class Ticket {
      * @return the category
      */
     public String getCategory() {
-        switch (this.category) {
-            case INQUIRY:
-                return C_INQUIRY;
-            case SOFTWARE:
-                return C_SOFTWARE;
-            case HARDWARE:
-                return C_HARDWARE;
-            case NETWORK:
-                return C_NETWORK;
-            case DATABASE:
-                return C_DATABASE;
-            default:
-                throw new IllegalArgumentException("Invalid category.");
-        }
+        return switch (this.category) {
+            case INQUIRY -> C_INQUIRY;
+            case SOFTWARE -> C_SOFTWARE;
+            case HARDWARE -> C_HARDWARE;
+            case NETWORK -> C_NETWORK;
+            case DATABASE -> C_DATABASE;
+            default -> throw new IllegalArgumentException("Invalid category.");
+        };
     }
 
     /**
@@ -466,7 +457,7 @@ public class Ticket {
      * @param caller the caller
      */
     private void setCaller(String caller) {
-        if (caller == null || caller.length() < 1) {
+        if (caller == null || caller.isEmpty()) {
             throw new IllegalArgumentException("Caller must be a String of length 1 or greater.");
         } else {
             this.caller = caller;
@@ -598,7 +589,7 @@ public class Ticket {
      * @param subject subject
      */
     private void setSubject(String subject) {
-        if (subject == null || subject.length() < 1) {
+        if (subject == null || subject.isEmpty()) {
             throw new IllegalArgumentException("Subject must be a String of length 1 or greater.");
         } else {
             this.subject = subject;

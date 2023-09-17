@@ -82,9 +82,7 @@ public class CommandTest {
 
         Assertions.assertEquals("Marcus", command.getOwnerId(), "Command.getOwnerId() should match the instance variable string");
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            command = new Command(null, OWNER_ID, FEEDBACK_CODE, RESOLUTION_CODE, CANCELLATION_CODE, NOTE);
-        }, "Command constructor should not take in a null value");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> command = new Command(null, OWNER_ID, FEEDBACK_CODE, RESOLUTION_CODE, CANCELLATION_CODE, NOTE), "Command constructor should not take in a null value");
 
     }
 
@@ -105,25 +103,15 @@ public class CommandTest {
         // CANCEL and null CC
         Assertions.assertNotNull(command.getCancellationCode(), "Command.getCancellationCode() should return a cancellation code string");
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            command = new Command(CommandValue.PROCESS, null, FEEDBACK_CODE, RESOLUTION_CODE, CANCELLATION_CODE, NOTE);
-        }, "Command constructor should not take in a null owner_id when in PROCESS state");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> command = new Command(CommandValue.PROCESS, null, FEEDBACK_CODE, RESOLUTION_CODE, CANCELLATION_CODE, NOTE), "Command constructor should not take in a null owner_id when in PROCESS state");
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            command = new Command(CommandValue.PROCESS, "", FEEDBACK_CODE, RESOLUTION_CODE, CANCELLATION_CODE, NOTE);
-        }, "Command constructor should not take in an empty owner_id value when in PROCESS state");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> command = new Command(CommandValue.PROCESS, "", FEEDBACK_CODE, RESOLUTION_CODE, CANCELLATION_CODE, NOTE), "Command constructor should not take in an empty owner_id value when in PROCESS state");
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            command = new Command(CommandValue.FEEDBACK, OWNER_ID, null, RESOLUTION_CODE, CANCELLATION_CODE, NOTE);
-        }, "Command constructor should not take in a null feedback_code value when in FEEDBACK state");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> command = new Command(CommandValue.FEEDBACK, OWNER_ID, null, RESOLUTION_CODE, CANCELLATION_CODE, NOTE), "Command constructor should not take in a null feedback_code value when in FEEDBACK state");
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            command = new Command(CommandValue.RESOLVE, OWNER_ID, FEEDBACK_CODE, null, CANCELLATION_CODE, NOTE);
-        }, "Command constructor should not take in a null resolution_code value when in RESOLVE state");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> command = new Command(CommandValue.RESOLVE, OWNER_ID, FEEDBACK_CODE, null, CANCELLATION_CODE, NOTE), "Command constructor should not take in a null resolution_code value when in RESOLVE state");
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            command = new Command(CommandValue.CANCEL, OWNER_ID, FEEDBACK_CODE, RESOLUTION_CODE, null, NOTE);
-        }, "Command constructor should not take in a null cancelation_code value when in CANCEL state");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> command = new Command(CommandValue.CANCEL, OWNER_ID, FEEDBACK_CODE, RESOLUTION_CODE, null, NOTE), "Command constructor should not take in a null cancelation_code value when in CANCEL state");
     }
 
     /**
@@ -133,14 +121,10 @@ public class CommandTest {
     public void testCommandNotes() {
 
         // null note
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            command = new Command(VALUE, OWNER_ID, FEEDBACK_CODE, RESOLUTION_CODE, CANCELLATION_CODE, null);
-        });
+        Assertions.assertThrows(IllegalArgumentException.class, () -> command = new Command(VALUE, OWNER_ID, FEEDBACK_CODE, RESOLUTION_CODE, CANCELLATION_CODE, null));
 
         // empty note
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            command = new Command(VALUE, OWNER_ID, FEEDBACK_CODE, RESOLUTION_CODE, CANCELLATION_CODE, "");
-        });
+        Assertions.assertThrows(IllegalArgumentException.class, () -> command = new Command(VALUE, OWNER_ID, FEEDBACK_CODE, RESOLUTION_CODE, CANCELLATION_CODE, ""));
 
         Assertions.assertNotNull(command.getNote(), "Command.getNote() should not be null");
     }

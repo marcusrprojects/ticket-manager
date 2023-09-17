@@ -530,7 +530,7 @@ public class TicketManagerGUI extends JFrame implements ActionListener {
              *            Object to modify in the data.
              * @param row
              *            location to modify the data.
-             * @param column
+             * @param col
              *            location to modify the data.
              */
             @Override

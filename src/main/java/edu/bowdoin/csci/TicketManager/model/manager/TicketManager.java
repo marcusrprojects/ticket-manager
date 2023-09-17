@@ -17,8 +17,8 @@ import main.java.edu.bowdoin.csci.TicketManager.model.ticket.Ticket.TicketType;
  * Uses a Singleton design pattern.
  * TicketManagerGUI interacts only with one instance of this class.
  * Controls creating and modifying ticket lists. Maintenance of the list is in TicketList.
- *
- * Works closesly with TicketReader and TicketWriter.
+ * <p>
+ * Works closely with TicketReader and TicketWriter.
  *
  * @author mribeiro
  *
@@ -117,7 +117,7 @@ public class TicketManager {
         String priority;
         Ticket ticket;
 
-        if (tickets.size() == 0) {
+        if (tickets.isEmpty()) {
             return new String[][]{};
         }
 
@@ -165,7 +165,7 @@ public class TicketManager {
         String ticketTypeString = this.titleCase(ticketType.name());
         Ticket ticket;
 
-        if (tickets.size() == 0) {
+        if (tickets.isEmpty()) {
             return new String[][]{};
         }
 
