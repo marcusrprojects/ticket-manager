@@ -2,6 +2,8 @@
 
 The Ticket Manager is a Java application that allows users to manage tickets. It provides functionality to add, remove, edit, sort, and hide tickets. This project includes several classes to support these features, as well as unit tests and system tests to ensure their functionality.
 
+Project Management Documentation: [Task Plan](./task-plan.md)
+
 ## Project Structure
 
 The project is organized into several classes:
@@ -25,4 +27,4 @@ The project is organized into several classes:
 ## Running Tests
 
 To ensure the correctness of the application, unit tests have been implemented using JUnit. You can run these tests to verify the functionality of the classes.
-Additionally, [System Tests](./project-docs/Project 1 System Test.docx) are provided and executed on as well.
+Additionally, [System Tests](./project-docs/Project-1-System-Test.docx) are provided and executed on as well.
