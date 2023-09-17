@@ -9,7 +9,7 @@ The project is organized into several classes:
 - `TicketReader`: Responsible for reading ticket data from a source (e.g., a file).
 - `TicketWriter`: Handles writing ticket data to a destination (e.g., a file).
 - `Ticket`: Represents a single ticket with various attributes.
-- `TicketState`: Defines the possible states of a ticket (e.g., open, closed, in progress).
+- `TicketState`: interface that ensures ticket states conform to the Ticket Manager State Pattern.
 - `TicketManager`: Manages a collection of tickets and provides operations to manipulate them.
 - `Command`: Composes commands for interacting with the Ticket Manager.
 - `TicketManagerGUI`: A graphical user interface (GUI) for interacting with the Ticket Manager.
