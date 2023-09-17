@@ -78,7 +78,7 @@ public class TicketManager {
 
     /**
      * helper function that converts a string to title case.
-     * @param word inputed one-word string
+     * @param word inputted one-word string
      * @return title case string
      */
     private String titleCase(String word) {
