@@ -1,0 +1,12 @@
+*3#Closed#Request#Subject line#caller#Inquiry#Medium#owner#Not Completed
+-a note
+-a note with
+a new line
+-a third note
+*6#Canceled#Incident#Subject line#caller#Software#Low#owner#Duplicate
+-a note 2
+-a second note
+-a note with
+a new line
+*7#New#Incident#Subject line#caller#Software#Low##
+-a note 3

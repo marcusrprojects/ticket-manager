@@ -1,0 +1,21 @@
+*1#New#Incident#GitHub down#sesmith5#Software#Urgent##
+-GitHub is not responding when I navigate to github.ncsu.edu
+*2#Working#Request#Workshop account#sesmith5#Inquiry#Low#ccgurley#
+-Create a workshop account for access to a GitHub repo
+-Assigned to ccgurley.
+-How long is the account needed for?
+-Until November 1
+*3#Feedback#Request#Add Gradescope plugin to Moodle#ahoward#Software#Medium#itecs#Awaiting Provider
+-Add Gradescope plugin to Moodle to import grades
+-Checking with plugin provider
+*4#Resolved#Incident#Lights not working in EBI 1011#jtking#Hardware#Medium#facilities#Workaround
+-Lights are not working in EB I 1011. 
+-Cannot install dimmer switch.  Will leave on.
+*5#Closed#Request#New VM#sesmith5#Inquiry#High#jtking#Completed
+-I would like to request a new VM for my class
+-Assigned to jtking
+-VM created
+-Request completed
+*6#Canceled#Request#Pizza#wpack#Inquiry#Urgent##Inappropriate
+-Deliver a large pizza to EBII 1221!
+-No!
