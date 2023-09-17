@@ -27,4 +27,4 @@ The project is organized into several classes:
 ## Running Tests
 
 To ensure the correctness of the application, unit tests have been implemented using JUnit. You can run these tests to verify the functionality of the classes.
-Additionally, [System Tests](./project-docs/Project-1%20System%20Test.docx) are provided and executed on as well.
+Additionally, [System Tests](./project-docs/Project%201%20System%20Test.docx) are provided and executed on as well.
